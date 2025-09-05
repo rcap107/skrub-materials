@@ -1,1 +1,1 @@
-Sitemap: https://rcap107.github.io/skrub-materials/sitemap.xml
+Sitemap: https://skrub-data.org/skrub-materials/sitemap.xml

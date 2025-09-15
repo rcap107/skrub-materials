@@ -7,8 +7,8 @@
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.24">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.6.39">
 
   <meta name="author" content="Riccardo Cappuzzo, Jérôme Dockès, Vincent Maladiere">
   <meta name="dcterms.date" content="2025-01-29">
@@ -31,9 +31,8 @@
       vertical-align: middle;
     }
     /* CSS for syntax highlighting */
-    html { -webkit-text-size-adjust: 100%; }
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span { line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -44,7 +43,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -97,7 +96,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto-0fde88a82f0356838740f155f1088782.css">
+  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto-423d414d36ce366a9d05f36d06304417.css">
   <link href="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -230,11 +229,13 @@ Riccardo Cappuzzo, Jérôme Dockès, Vincent Maladiere
 <p>Skrub stems from the development of <code>dirty_cat</code>, a package that provided support for handling dirty columns and perform fuzzy joins across tables.</p>
 <div class="fragment">
 <p>It has since evolved into a package that provides:</p>
+<div>
 <ul>
 <li>interactive data exploration</li>
 <li>automated pre-processing of pandas and polars dataframes</li>
 <li>powerful feature engineering</li>
 </ul>
+</div>
 </div>
 </section>
 <section id="skrubs-vision" class="slide level2">
@@ -273,14 +274,14 @@ Riccardo Cappuzzo, Jérôme Dockès, Vincent Maladiere
 <section id="exploring-the-data" class="slide level2 smaller">
 <h2>Exploring the data</h2>
 <div id="9cd89ced" class="cell" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="im">import</span> skrub</span>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="im">import</span> skrub</span>
 <span id="cb1-2"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-3"><a></a><span class="im">from</span> skrub.datasets <span class="im">import</span> fetch_employee_salaries</span>
 <span id="cb1-4"><a></a></span>
 <span id="cb1-5"><a></a>dataset <span class="op">=</span> fetch_employee_salaries()</span>
 <span id="cb1-6"><a></a>employees, salaries <span class="op">=</span> dataset.X, dataset.y</span>
 <span id="cb1-7"><a></a></span>
-<span id="cb1-8"><a></a>employees.describe(include<span class="op">=</span><span class="st">"all"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-8"><a></a>employees.describe(include<span class="op">=</span><span class="st">"all"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <div>
 <style scoped="">
@@ -297,7 +298,7 @@ Riccardo Cappuzzo, Jérôme Dockès, Vincent Maladiere
     }
 </style>
 
-<table class="dataframe caption-top" data-border="1">
+<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header" style="text-align: right;">
 <th data-quarto-table-cell-role="th"></th>
@@ -313,7 +314,7 @@ Riccardo Cappuzzo, Jérôme Dockès, Vincent Maladiere
 </thead>
 <tbody>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">count</th>
+<td data-quarto-table-cell-role="th">count</td>
 <td>9211</td>
 <td>9228</td>
 <td>9228</td>
@@ -324,7 +325,7 @@ Riccardo Cappuzzo, Jérôme Dockès, Vincent Maladiere
 <td>9228.000000</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">unique</th>
+<td data-quarto-table-cell-role="th">unique</td>
 <td>2</td>
 <td>37</td>
 <td>37</td>
@@ -335,7 +336,7 @@ Riccardo Cappuzzo, Jérôme Dockès, Vincent Maladiere
 <td>NaN</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">top</th>
+<td data-quarto-table-cell-role="th">top</td>
 <td>M</td>
 <td>POL</td>
 <td>Department of Police</td>
@@ -346,7 +347,7 @@ Riccardo Cappuzzo, Jérôme Dockès, Vincent Maladiere
 <td>NaN</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">freq</th>
+<td data-quarto-table-cell-role="th">freq</td>
 <td>5481</td>
 <td>1844</td>
 <td>1844</td>
@@ -357,7 +358,7 @@ Riccardo Cappuzzo, Jérôme Dockès, Vincent Maladiere
 <td>NaN</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">mean</th>
+<td data-quarto-table-cell-role="th">mean</td>
 <td>NaN</td>
 <td>NaN</td>
 <td>NaN</td>
@@ -368,7 +369,7 @@ Riccardo Cappuzzo, Jérôme Dockès, Vincent Maladiere
 <td>2003.597529</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">std</th>
+<td data-quarto-table-cell-role="th">std</td>
 <td>NaN</td>
 <td>NaN</td>
 <td>NaN</td>
@@ -379,7 +380,7 @@ Riccardo Cappuzzo, Jérôme Dockès, Vincent Maladiere
 <td>9.327078</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">min</th>
+<td data-quarto-table-cell-role="th">min</td>
 <td>NaN</td>
 <td>NaN</td>
 <td>NaN</td>
@@ -390,7 +391,7 @@ Riccardo Cappuzzo, Jérôme Dockès, Vincent Maladiere
 <td>1965.000000</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">25%</th>
+<td data-quarto-table-cell-role="th">25%</td>
 <td>NaN</td>
 <td>NaN</td>
 <td>NaN</td>
@@ -401,7 +402,7 @@ Riccardo Cappuzzo, Jérôme Dockès, Vincent Maladiere
 <td>1998.000000</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">50%</th>
+<td data-quarto-table-cell-role="th">50%</td>
 <td>NaN</td>
 <td>NaN</td>
 <td>NaN</td>
@@ -412,7 +413,7 @@ Riccardo Cappuzzo, Jérôme Dockès, Vincent Maladiere
 <td>2005.000000</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">75%</th>
+<td data-quarto-table-cell-role="th">75%</td>
 <td>NaN</td>
 <td>NaN</td>
 <td>NaN</td>
@@ -423,7 +424,7 @@ Riccardo Cappuzzo, Jérôme Dockès, Vincent Maladiere
 <td>2012.000000</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">max</th>
+<td data-quarto-table-cell-role="th">max</td>
 <td>NaN</td>
 <td>NaN</td>
 <td>NaN</td>
@@ -443,8 +444,8 @@ Riccardo Cappuzzo, Jérôme Dockès, Vincent Maladiere
 </section>
 <section id="exploring-the-data-interactively" class="slide level2 smaller">
 <h2>Exploring the data… interactively!</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="im">from</span> skrub <span class="im">import</span> TableReport</span>
-<span id="cb3-2"><a></a>TableReport(employee_salaries)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="im">from</span> skrub <span class="im">import</span> TableReport</span>
+<span id="cb3-2"><a></a>TableReport(employee_salaries)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><a href="https://skrub-data.org/skrub-reports/examples/employee_salaries.html" data-preview-link="true">Preview</a></p>
 <div class="fragment">
 <p>Main features:</p>
@@ -461,33 +462,33 @@ Riccardo Cappuzzo, Jérôme Dockès, Vincent Maladiere
 </section>
 <section id="build-a-predictive-pipeline" class="slide level2 smaller" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Build a predictive pipeline</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="build-a-predictive-pipeline-1" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Build a predictive pipeline</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb5-1" class="hljs-ln-code"><a></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> Ridge</span>
-<span id="cb5-2" class="hljs-ln-code"><a></a>model <span class="op">=</span> Ridge()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb5-1" class="hljs-ln-code"><a></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> Ridge</span>
+<span id="cb5-2" class="hljs-ln-code"><a></a>model <span class="op">=</span> Ridge()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="build-a-predictive-pipeline-2" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Build a predictive pipeline</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6" data-code-line-numbers="2-5"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb6-1" class="hljs-ln-code"><a></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> Ridge</span>
+<div class="sourceCode" id="cb6" data-code-line-numbers="2-5"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb6-1" class="hljs-ln-code"><a></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> Ridge</span>
 <span id="cb6-2" class="hljs-ln-code"><a></a><span class="im">from</span> sklearn.pipeline <span class="im">import</span> make_pipeline</span>
 <span id="cb6-3" class="hljs-ln-code"><a></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> StandardScaler</span>
 <span id="cb6-4" class="hljs-ln-code"><a></a></span>
-<span id="cb6-5" class="hljs-ln-code"><a></a>model <span class="op">=</span> make_pipeline(StandardScaler(), Ridge())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb6-5" class="hljs-ln-code"><a></a>model <span class="op">=</span> make_pipeline(StandardScaler(), Ridge())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="build-a-predictive-pipeline-3" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Build a predictive pipeline</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7" data-code-line-numbers="4,6"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb7-1" class="hljs-ln-code"><a></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> Ridge</span>
+<div class="sourceCode" id="cb7" data-code-line-numbers="4,6"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb7-1" class="hljs-ln-code"><a></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> Ridge</span>
 <span id="cb7-2" class="hljs-ln-code"><a></a><span class="im">from</span> sklearn.pipeline <span class="im">import</span> make_pipeline</span>
 <span id="cb7-3" class="hljs-ln-code"><a></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> StandardScaler</span>
 <span id="cb7-4" class="hljs-ln-code"><a></a><span class="im">from</span> sklearn.impute <span class="im">import</span> SimpleImputer</span>
 <span id="cb7-5" class="hljs-ln-code"><a></a></span>
-<span id="cb7-6" class="hljs-ln-code"><a></a>model <span class="op">=</span> make_pipeline(SimpleImputer(), StandardScaler(), Ridge())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb7-6" class="hljs-ln-code"><a></a>model <span class="op">=</span> make_pipeline(SimpleImputer(), StandardScaler(), Ridge())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="build-a-predictive-pipeline-4" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Build a predictive pipeline</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8" data-code-line-numbers="3,5,6-17"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb8-1" class="hljs-ln-code"><a></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> Ridge</span>
+<div class="sourceCode" id="cb8" data-code-line-numbers="3,5,6-17"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb8-1" class="hljs-ln-code"><a></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> Ridge</span>
 <span id="cb8-2" class="hljs-ln-code"><a></a><span class="im">from</span> sklearn.pipeline <span class="im">import</span> make_pipeline</span>
 <span id="cb8-3" class="hljs-ln-code"><a></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> StandardScaler, OneHotEncoder</span>
 <span id="cb8-4" class="hljs-ln-code"><a></a><span class="im">from</span> sklearn.impute <span class="im">import</span> SimpleImputer</span>
@@ -503,11 +504,11 @@ Riccardo Cappuzzo, Jérôme Dockès, Vincent Maladiere
 <span id="cb8-14" class="hljs-ln-code"><a></a>      (OneHotEncoder(handle_unknown<span class="op">=</span><span class="st">"ignore"</span>),</span>
 <span id="cb8-15" class="hljs-ln-code"><a></a>       categorical_columns))</span>
 <span id="cb8-16" class="hljs-ln-code"><a></a></span>
-<span id="cb8-17" class="hljs-ln-code"><a></a>model <span class="op">=</span> make_pipeline(ct, SimpleImputer(), Ridge())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb8-17" class="hljs-ln-code"><a></a>model <span class="op">=</span> make_pipeline(ct, SimpleImputer(), Ridge())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="build-a-predictive-pipeline-5" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Build a predictive pipeline</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb9-1" class="hljs-ln-code"><a></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> Ridge</span>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb9-1" class="hljs-ln-code"><a></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> Ridge</span>
 <span id="cb9-2" class="hljs-ln-code"><a></a><span class="im">from</span> sklearn.pipeline <span class="im">import</span> make_pipeline</span>
 <span id="cb9-3" class="hljs-ln-code"><a></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> StandardScaler, OneHotEncoder</span>
 <span id="cb9-4" class="hljs-ln-code"><a></a><span class="im">from</span> sklearn.impute <span class="im">import</span> SimpleImputer</span>
@@ -523,7 +524,7 @@ Riccardo Cappuzzo, Jérôme Dockès, Vincent Maladiere
 <span id="cb9-14" class="hljs-ln-code"><a></a>      (OneHotEncoder(handle_unknown<span class="op">=</span><span class="st">"ignore"</span>),</span>
 <span id="cb9-15" class="hljs-ln-code"><a></a>       categorical_columns))</span>
 <span id="cb9-16" class="hljs-ln-code"><a></a></span>
-<span id="cb9-17" class="hljs-ln-code"><a></a>model <span class="op">=</span> make_pipeline(ct, SimpleImputer(), Ridge())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb9-17" class="hljs-ln-code"><a></a>model <span class="op">=</span> make_pipeline(ct, SimpleImputer(), Ridge())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="build-a-predictive-pipeline-6" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Build a predictive pipeline</h2>
@@ -1023,7 +1024,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
             <details>
                 <summary>Parameters</summary>
                 
-<table class="parameters-table caption-top">
+<table class="parameters-table caption-top" data-quarto-postprocess="true">
 <tbody>
 <tr class="user-set odd">
 <td><em></em></td>
@@ -1055,7 +1056,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
             <details>
                 <summary>Parameters</summary>
                 
-<table class="parameters-table caption-top">
+<table class="parameters-table caption-top" data-quarto-postprocess="true">
 <tbody>
 <tr class="user-set odd">
 <td><em></em></td>
@@ -1107,7 +1108,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
             <details>
                 <summary>Parameters</summary>
                 
-<table class="parameters-table caption-top">
+<table class="parameters-table caption-top" data-quarto-postprocess="true">
 <tbody>
 <tr class="default odd">
 <td><em></em></td>
@@ -1134,7 +1135,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
             <details>
                 <summary>Parameters</summary>
                 
-<table class="parameters-table caption-top">
+<table class="parameters-table caption-top" data-quarto-postprocess="true">
 <tbody>
 <tr class="default odd">
 <td><em></em></td>
@@ -1186,7 +1187,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
             <details>
                 <summary>Parameters</summary>
                 
-<table class="parameters-table caption-top">
+<table class="parameters-table caption-top" data-quarto-postprocess="true">
 <tbody>
 <tr class="default odd">
 <td><em></em></td>
@@ -1228,7 +1229,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
             <details>
                 <summary>Parameters</summary>
                 
-<table class="parameters-table caption-top">
+<table class="parameters-table caption-top" data-quarto-postprocess="true">
 <tbody>
 <tr class="default odd">
 <td><em></em></td>
@@ -1323,9 +1324,9 @@ document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
 </section>
 <section id="enter-tabular_learner" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Enter: <code>tabular_learner</code></h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb10-1" class="hljs-ln-code"><a></a><span class="im">import</span> skrub</span>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb10-1" class="hljs-ln-code"><a></a><span class="im">import</span> skrub</span>
 <span id="cb10-2" class="hljs-ln-code"><a></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> Ridge</span>
-<span id="cb10-3" class="hljs-ln-code"><a></a>tl <span class="op">=</span> skrub.tabular_learner(Ridge())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb10-3" class="hljs-ln-code"><a></a>tl <span class="op">=</span> skrub.tabular_learner(Ridge())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="enter-tabular_learner-1" class="slide level2 smaller" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Enter: <code>tabular_learner</code></h2>
@@ -1816,7 +1817,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
             <details>
                 <summary>Parameters</summary>
                 
-<table class="parameters-table caption-top">
+<table class="parameters-table caption-top" data-quarto-postprocess="true">
 <tbody>
 <tr class="user-set odd">
 <td><em></em></td>
@@ -1848,7 +1849,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
             <details>
                 <summary>Parameters</summary>
                 
-<table class="parameters-table caption-top">
+<table class="parameters-table caption-top" data-quarto-postprocess="true">
 <tbody>
 <tr class="default odd">
 <td><em></em></td>
@@ -1915,7 +1916,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
             <details>
                 <summary>Parameters</summary>
                 
-<table class="parameters-table caption-top">
+<table class="parameters-table caption-top" data-quarto-postprocess="true">
 <tbody>
 <tr class="default odd">
 <td><em></em></td>
@@ -1952,7 +1953,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
             <details>
                 <summary>Parameters</summary>
                 
-<table class="parameters-table caption-top">
+<table class="parameters-table caption-top" data-quarto-postprocess="true">
 <tbody>
 <tr class="default odd">
 <td><em></em></td>
@@ -2004,7 +2005,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
             <details>
                 <summary>Parameters</summary>
                 
-<table class="parameters-table caption-top">
+<table class="parameters-table caption-top" data-quarto-postprocess="true">
 <tbody>
 <tr class="default odd">
 <td><em></em></td>
@@ -2046,7 +2047,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
             <details>
                 <summary>Parameters</summary>
                 
-<table class="parameters-table caption-top">
+<table class="parameters-table caption-top" data-quarto-postprocess="true">
 <tbody>
 <tr class="default odd">
 <td><em></em></td>
@@ -2088,7 +2089,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
             <details>
                 <summary>Parameters</summary>
                 
-<table class="parameters-table caption-top">
+<table class="parameters-table caption-top" data-quarto-postprocess="true">
 <tbody>
 <tr class="default odd">
 <td><em></em></td>
@@ -2115,7 +2116,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
             <details>
                 <summary>Parameters</summary>
                 
-<table class="parameters-table caption-top">
+<table class="parameters-table caption-top" data-quarto-postprocess="true">
 <tbody>
 <tr class="default odd">
 <td><em></em></td>
@@ -2714,7 +2715,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
             <details>
                 <summary>Parameters</summary>
                 
-<table class="parameters-table caption-top">
+<table class="parameters-table caption-top" data-quarto-postprocess="true">
 <tbody>
 <tr class="user-set odd">
 <td><em></em></td>
@@ -2746,7 +2747,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
             <details>
                 <summary>Parameters</summary>
                 
-<table class="parameters-table caption-top">
+<table class="parameters-table caption-top" data-quarto-postprocess="true">
 <tbody>
 <tr class="default odd">
 <td><em></em></td>
@@ -2813,7 +2814,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
             <details>
                 <summary>Parameters</summary>
                 
-<table class="parameters-table caption-top">
+<table class="parameters-table caption-top" data-quarto-postprocess="true">
 <tbody>
 <tr class="default odd">
 <td><em></em></td>
@@ -2850,7 +2851,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
             <details>
                 <summary>Parameters</summary>
                 
-<table class="parameters-table caption-top">
+<table class="parameters-table caption-top" data-quarto-postprocess="true">
 <tbody>
 <tr class="default odd">
 <td><em></em></td>
@@ -2892,7 +2893,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
             <details>
                 <summary>Parameters</summary>
                 
-<table class="parameters-table caption-top">
+<table class="parameters-table caption-top" data-quarto-postprocess="true">
 <tbody>
 <tr class="default odd">
 <td><em></em></td>
@@ -3070,6 +3071,7 @@ document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
 <section id="under-the-hood-tablevectorizer-1" class="slide level2 smaller" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Under the hood: <code>TableVectorizer</code></h2>
 <p>Pre-process the data</p>
+<div>
 <ul>
 <li>Ensure consistent column names</li>
 <li>Detect missing values such as “N/A”</li>
@@ -3078,6 +3080,7 @@ document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
 <li>Parse dates, ensuring consistent dtype and timezone</li>
 <li>Identify which categorical features are low- and high-cardinality</li>
 </ul>
+</div>
 </section>
 <section id="under-the-hood-tablevectorizer-2" class="slide level2 smaller" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Under the hood: <code>TableVectorizer</code></h2>
@@ -3104,11 +3107,11 @@ document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
 <section id="under-the-hood-tablevectorizer-4" class="slide level2 smaller" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Under the hood: <code>TableVectorizer</code></h2>
 <div id="75c02015" class="cell" data-execution_count="5">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a>vectorizer <span class="op">=</span> skrub.TableVectorizer()</span>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a>vectorizer <span class="op">=</span> skrub.TableVectorizer()</span>
 <span id="cb11-2"><a></a>transformed <span class="op">=</span> vectorizer.fit_transform(employees)</span>
 <span id="cb11-3"><a></a><span class="im">from</span> pprint <span class="im">import</span> pprint</span>
 <span id="cb11-4"><a></a></span>
-<span id="cb11-5"><a></a>pprint(vectorizer.column_to_kind_)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb11-5"><a></a>pprint(vectorizer.column_to_kind_)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>{'assignment_category': 'low_cardinality',
  'date_first_hired': 'datetime',
@@ -3121,7 +3124,7 @@ document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
 </div>
 </div>
 <div id="f4e68b52" class="cell" data-execution_count="6">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a>pprint(vectorizer.all_processing_steps_[<span class="st">"date_first_hired"</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a>pprint(vectorizer.all_processing_steps_[<span class="st">"date_first_hired"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[CleanNullStrings(),
  DropUninformative(),
@@ -3134,7 +3137,7 @@ document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
 <section id="encoding-datetime-features" class="slide level2 smaller" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Encoding datetime features</h2>
 <div id="a9cb6a92" class="cell" data-execution_count="7">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb15-1" class="hljs-ln-code"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb15-1" class="hljs-ln-code"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb15-2" class="hljs-ln-code"><a></a></span>
 <span id="cb15-3" class="hljs-ln-code"><a></a>data <span class="op">=</span> pd.read_csv(</span>
 <span id="cb15-4" class="hljs-ln-code"><a></a>    <span class="st">"https://raw.githubusercontent.com/skrub-data/datasets/master"</span></span>
@@ -3144,7 +3147,7 @@ document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
 <span id="cb15-8" class="hljs-ln-code"><a></a>y <span class="op">=</span> data[<span class="st">"cnt"</span>]</span>
 <span id="cb15-9" class="hljs-ln-code"><a></a>X <span class="op">=</span> data[[<span class="st">"date"</span>, <span class="st">"holiday"</span>, <span class="st">"temp"</span>, <span class="st">"hum"</span>, <span class="st">"windspeed"</span>, <span class="st">"weathersit"</span>]]</span>
 <span id="cb15-10" class="hljs-ln-code"><a></a></span>
-<span id="cb15-11" class="hljs-ln-code"><a></a>X</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb15-11" class="hljs-ln-code"><a></a>X</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
 <div>
 <style scoped="">
@@ -3161,7 +3164,7 @@ document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
     }
 </style>
 
-<table class="dataframe caption-top" data-border="1">
+<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header" style="text-align: right;">
 <th data-quarto-table-cell-role="th"></th>
@@ -3175,7 +3178,7 @@ document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
 </thead>
 <tbody>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">0</th>
+<td data-quarto-table-cell-role="th">0</td>
 <td>2011-01-01 00:00:00</td>
 <td>0</td>
 <td>0.24</td>
@@ -3184,7 +3187,7 @@ document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
 <td>1</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">1</th>
+<td data-quarto-table-cell-role="th">1</td>
 <td>2011-01-01 01:00:00</td>
 <td>0</td>
 <td>0.22</td>
@@ -3193,7 +3196,7 @@ document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
 <td>1</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">2</th>
+<td data-quarto-table-cell-role="th">2</td>
 <td>2011-01-01 02:00:00</td>
 <td>0</td>
 <td>0.22</td>
@@ -3202,7 +3205,7 @@ document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
 <td>1</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">3</th>
+<td data-quarto-table-cell-role="th">3</td>
 <td>2011-01-01 03:00:00</td>
 <td>0</td>
 <td>0.24</td>
@@ -3211,7 +3214,7 @@ document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
 <td>1</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">4</th>
+<td data-quarto-table-cell-role="th">4</td>
 <td>2011-01-01 04:00:00</td>
 <td>0</td>
 <td>0.24</td>
@@ -3220,7 +3223,7 @@ document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
 <td>1</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">...</th>
+<td data-quarto-table-cell-role="th">...</td>
 <td>...</td>
 <td>...</td>
 <td>...</td>
@@ -3229,7 +3232,7 @@ document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
 <td>...</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">17374</th>
+<td data-quarto-table-cell-role="th">17374</td>
 <td>2012-12-31 19:00:00</td>
 <td>0</td>
 <td>0.26</td>
@@ -3238,7 +3241,7 @@ document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
 <td>2</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">17375</th>
+<td data-quarto-table-cell-role="th">17375</td>
 <td>2012-12-31 20:00:00</td>
 <td>0</td>
 <td>0.26</td>
@@ -3247,7 +3250,7 @@ document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
 <td>2</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">17376</th>
+<td data-quarto-table-cell-role="th">17376</td>
 <td>2012-12-31 21:00:00</td>
 <td>0</td>
 <td>0.26</td>
@@ -3256,7 +3259,7 @@ document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
 <td>1</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">17377</th>
+<td data-quarto-table-cell-role="th">17377</td>
 <td>2012-12-31 22:00:00</td>
 <td>0</td>
 <td>0.26</td>
@@ -3265,7 +3268,7 @@ document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
 <td>1</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">17378</th>
+<td data-quarto-table-cell-role="th">17378</td>
 <td>2012-12-31 23:00:00</td>
 <td>0</td>
 <td>0.26</td>
@@ -3284,11 +3287,11 @@ document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
 <section id="encoding-datetime-features-1" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Encoding datetime features</h2>
 <div id="2f8b8ef7" class="cell" data-execution_count="8">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb16-1" class="hljs-ln-code"><a></a><span class="im">from</span> pprint <span class="im">import</span> pprint</span>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb16-1" class="hljs-ln-code"><a></a><span class="im">from</span> pprint <span class="im">import</span> pprint</span>
 <span id="cb16-2" class="hljs-ln-code"><a></a><span class="im">from</span> skrub <span class="im">import</span> TableVectorizer, DatetimeEncoder</span>
 <span id="cb16-3" class="hljs-ln-code"><a></a></span>
 <span id="cb16-4" class="hljs-ln-code"><a></a>table_vec_weekday <span class="op">=</span> TableVectorizer(datetime<span class="op">=</span>DatetimeEncoder(add_weekday<span class="op">=</span><span class="va">True</span>)).fit(X)</span>
-<span id="cb16-5" class="hljs-ln-code"><a></a>pprint(table_vec_weekday.get_feature_names_out())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb16-5" class="hljs-ln-code"><a></a>pprint(table_vec_weekday.get_feature_names_out())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>array(['date_year', 'date_month', 'date_day', 'date_hour',
        'date_total_seconds', 'date_weekday', 'holiday', 'temp', 'hum',
@@ -3299,7 +3302,7 @@ document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
 <section id="encoding-datetime-features-2" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Encoding datetime features</h2>
 <div id="c2602517" class="cell" data-execution_count="9">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb18-1" class="hljs-ln-code"><a></a><span class="im">from</span> sklearn.ensemble <span class="im">import</span> HistGradientBoostingRegressor</span>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb18-1" class="hljs-ln-code"><a></a><span class="im">from</span> sklearn.ensemble <span class="im">import</span> HistGradientBoostingRegressor</span>
 <span id="cb18-2" class="hljs-ln-code"><a></a><span class="im">from</span> sklearn.pipeline <span class="im">import</span> make_pipeline</span>
 <span id="cb18-3" class="hljs-ln-code"><a></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> TimeSeriesSplit, cross_val_score</span>
 <span id="cb18-4" class="hljs-ln-code"><a></a></span>
@@ -3308,7 +3311,7 @@ document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
 <span id="cb18-7" class="hljs-ln-code"><a></a>cross_val_score(</span>
 <span id="cb18-8" class="hljs-ln-code"><a></a>    pipeline_weekday, X, y, scoring<span class="op">=</span><span class="st">"neg_mean_squared_error"</span>,</span>
 <span id="cb18-9" class="hljs-ln-code"><a></a>    cv<span class="op">=</span>TimeSeriesSplit(n_splits<span class="op">=</span><span class="dv">5</span>),</span>
-<span id="cb18-10" class="hljs-ln-code"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb18-10" class="hljs-ln-code"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>array([ -3694.45159469,  -3180.1148674 , -15183.44808403,  -4824.29173547,
         -5391.06731737])</code></pre>
@@ -3352,7 +3355,7 @@ document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
 <section id="aggjoiner-automatically-aggregate-values-1" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title"><code>AggJoiner</code>: automatically aggregate values</h2>
 <div id="d79142d3" class="cell" data-execution_count="11">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb20-1" class="hljs-ln-code"><a></a><span class="im">import</span> skrub</span>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb20-1" class="hljs-ln-code"><a></a><span class="im">import</span> skrub</span>
 <span id="cb20-2" class="hljs-ln-code"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb20-3" class="hljs-ln-code"><a></a></span>
 <span id="cb20-4" class="hljs-ln-code"><a></a>df1 <span class="op">=</span> pd.DataFrame({</span>
@@ -3364,7 +3367,7 @@ document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
 <span id="cb20-10" class="hljs-ln-code"><a></a>    <span class="st">"Price"</span>: [<span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">10</span>, <span class="dv">320</span>, <span class="dv">30</span>]})</span>
 <span id="cb20-11" class="hljs-ln-code"><a></a></span>
 <span id="cb20-12" class="hljs-ln-code"><a></a>joiner <span class="op">=</span> skrub.AggJoiner(df2, operations<span class="op">=</span><span class="st">"sum"</span>, key<span class="op">=</span><span class="st">"Basket ID"</span>, cols<span class="op">=</span><span class="st">"Price"</span>)</span>
-<span id="cb20-13" class="hljs-ln-code"><a></a>joiner.fit_transform(df1)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb20-13" class="hljs-ln-code"><a></a>joiner.fit_transform(df1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
 <div>
 <style scoped="">
@@ -3381,7 +3384,7 @@ document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
     }
 </style>
 
-<table class="dataframe caption-top" data-border="1">
+<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header" style="text-align: right;">
 <th data-quarto-table-cell-role="th"></th>
@@ -3392,19 +3395,19 @@ document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
 </thead>
 <tbody>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">0</th>
+<td data-quarto-table-cell-role="th">0</td>
 <td>28</td>
 <td>1100</td>
 <td>65</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">1</th>
+<td data-quarto-table-cell-role="th">1</td>
 <td>32</td>
 <td>1300</td>
 <td>320</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">2</th>
+<td data-quarto-table-cell-role="th">2</td>
 <td>28</td>
 <td>1400</td>
 <td>30</td>
@@ -3419,7 +3422,7 @@ document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
 <section id="interpolationjoiner-infer-missing-values" class="slide level2 smaller" data-auto-animate="true">
 <h2 data-id="quarto-animate-title"><code>InterpolationJoiner</code>: infer missing values</h2>
 <div id="c0525d67" class="cell" data-execution_count="12">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb21-1" class="hljs-ln-code"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb21-1" class="hljs-ln-code"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb21-2" class="hljs-ln-code"><a></a></span>
 <span id="cb21-3" class="hljs-ln-code"><a></a><span class="im">from</span> skrub.datasets <span class="im">import</span> fetch_flight_delays</span>
 <span id="cb21-4" class="hljs-ln-code"><a></a></span>
@@ -3430,7 +3433,7 @@ document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
 <span id="cb21-9" class="hljs-ln-code"><a></a>weather <span class="op">=</span> stations.merge(weather, on<span class="op">=</span><span class="st">"ID"</span>)[</span>
 <span id="cb21-10" class="hljs-ln-code"><a></a>    [<span class="st">"LATITUDE"</span>, <span class="st">"LONGITUDE"</span>, <span class="st">"YEAR/MONTH/DAY"</span>, <span class="st">"TMAX"</span>, <span class="st">"PRCP"</span>, <span class="st">"SNOW"</span>]</span>
 <span id="cb21-11" class="hljs-ln-code"><a></a>]</span>
-<span id="cb21-12" class="hljs-ln-code"><a></a>weather[<span class="st">"YEAR/MONTH/DAY"</span>] <span class="op">=</span> pd.to_datetime(weather[<span class="st">"YEAR/MONTH/DAY"</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb21-12" class="hljs-ln-code"><a></a>weather[<span class="st">"YEAR/MONTH/DAY"</span>] <span class="op">=</span> pd.to_datetime(weather[<span class="st">"YEAR/MONTH/DAY"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="d5319c0a" class="cell" data-execution_count="13">
 <div class="cell-output cell-output-display" data-execution_count="13">
@@ -3449,7 +3452,7 @@ document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
     }
 </style>
 
-<table class="dataframe caption-top" data-border="1">
+<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header" style="text-align: right;">
 <th data-quarto-table-cell-role="th"></th>
@@ -3463,7 +3466,7 @@ document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
 </thead>
 <tbody>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">0</th>
+<td data-quarto-table-cell-role="th">0</td>
 <td>25.333</td>
 <td>55.517</td>
 <td>2008-11-16</td>
@@ -3472,7 +3475,7 @@ document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
 <td>NaN</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">1</th>
+<td data-quarto-table-cell-role="th">1</td>
 <td>25.333</td>
 <td>55.517</td>
 <td>2008-04-12</td>
@@ -3481,7 +3484,7 @@ document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
 <td>NaN</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">2</th>
+<td data-quarto-table-cell-role="th">2</td>
 <td>25.255</td>
 <td>55.364</td>
 <td>2008-08-28</td>
@@ -3490,7 +3493,7 @@ document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
 <td>NaN</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">3</th>
+<td data-quarto-table-cell-role="th">3</td>
 <td>25.255</td>
 <td>55.364</td>
 <td>2008-02-17</td>
@@ -3499,7 +3502,7 @@ document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
 <td>NaN</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">4</th>
+<td data-quarto-table-cell-role="th">4</td>
 <td>25.255</td>
 <td>55.364</td>
 <td>2008-11-25</td>
@@ -3517,14 +3520,14 @@ document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
 <section id="interpolationjoiner" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title"><code>InterpolationJoiner</code></h2>
 <div id="7c125aaa" class="cell" data-execution_count="14">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb22-1" class="hljs-ln-code"><a></a><span class="im">from</span> skrub <span class="im">import</span> InterpolationJoiner</span>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb22-1" class="hljs-ln-code"><a></a><span class="im">from</span> skrub <span class="im">import</span> InterpolationJoiner</span>
 <span id="cb22-2" class="hljs-ln-code"><a></a>joiner <span class="op">=</span> InterpolationJoiner(</span>
 <span id="cb22-3" class="hljs-ln-code"><a></a>    aux_table,</span>
 <span id="cb22-4" class="hljs-ln-code"><a></a>    key<span class="op">=</span>[<span class="st">"LATITUDE"</span>, <span class="st">"LONGITUDE"</span>, <span class="st">"YEAR/MONTH/DAY"</span>],</span>
 <span id="cb22-5" class="hljs-ln-code"><a></a>    suffix<span class="op">=</span><span class="st">"_predicted"</span>,</span>
 <span id="cb22-6" class="hljs-ln-code"><a></a>).fit(main_table)</span>
 <span id="cb22-7" class="hljs-ln-code"><a></a>join <span class="op">=</span> joiner.transform(main_table)</span>
-<span id="cb22-8" class="hljs-ln-code"><a></a>join.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb22-8" class="hljs-ln-code"><a></a>join.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="14">
 <div>
 <style scoped="">
@@ -3541,7 +3544,7 @@ document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
     }
 </style>
 
-<table class="dataframe caption-top" data-border="1">
+<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header" style="text-align: right;">
 <th data-quarto-table-cell-role="th"></th>
@@ -3558,7 +3561,7 @@ document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
 </thead>
 <tbody>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">0</th>
+<td data-quarto-table-cell-role="th">0</td>
 <td>25.333</td>
 <td>55.517</td>
 <td>2008-11-16</td>
@@ -3570,7 +3573,7 @@ document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
 <td>-0.001023</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">1</th>
+<td data-quarto-table-cell-role="th">1</td>
 <td>25.333</td>
 <td>55.517</td>
 <td>2008-04-12</td>
@@ -3582,7 +3585,7 @@ document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
 <td>0.142712</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">2</th>
+<td data-quarto-table-cell-role="th">2</td>
 <td>25.255</td>
 <td>55.364</td>
 <td>2008-08-28</td>
@@ -3594,7 +3597,7 @@ document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
 <td>-0.053227</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">3</th>
+<td data-quarto-table-cell-role="th">3</td>
 <td>25.255</td>
 <td>55.364</td>
 <td>2008-02-17</td>
@@ -3606,7 +3609,7 @@ document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
 <td>0.239012</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">4</th>
+<td data-quarto-table-cell-role="th">4</td>
 <td>25.255</td>
 <td>55.364</td>
 <td>2008-11-25</td>
@@ -3644,10 +3647,10 @@ document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
 <h2>Additional goodies: deduplication</h2>
 <p><code>deduplicate</code> misspelled categories</p>
 <div id="5086cf03" class="cell" data-execution_count="17">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a></a><span class="im">from</span> skrub <span class="im">import</span> deduplicate</span>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a></a><span class="im">from</span> skrub <span class="im">import</span> deduplicate</span>
 <span id="cb23-2"><a></a>pprint(duplicated)</span>
 <span id="cb23-3"><a></a>deduplicate_correspondence <span class="op">=</span> deduplicate(duplicated)</span>
-<span id="cb23-4"><a></a>pprint(deduplicate_correspondence.to_dict())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb23-4"><a></a>pprint(deduplicate_correspondence.to_dict())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>['ulack', 'black', 'black', 'xudte', 'white', 'white']
 {'black': 'black', 'ulack': 'black', 'white': 'white', 'xudte': 'white'}</code></pre>
@@ -3658,12 +3661,12 @@ document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
 <section id="additional-goodies-wikipedia-embeddings-as-features" class="slide level2">
 <h2>Additional goodies: Wikipedia embeddings as features</h2>
 <p>KEN embeddings capture relational information about all entities in Wikipedia.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a></a><span class="im">from</span> skrub.datasets <span class="im">import</span> fetch_ken_embeddings</span>
+<div class="sourceCode" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a></a><span class="im">from</span> skrub.datasets <span class="im">import</span> fetch_ken_embeddings</span>
 <span id="cb25-2"><a></a>embedding_games <span class="op">=</span> fetch_ken_embeddings(</span>
 <span id="cb25-3"><a></a>    search_types<span class="op">=</span><span class="st">"game"</span>,</span>
 <span id="cb25-4"><a></a>    exclude<span class="op">=</span><span class="st">"companies|developer"</span>,</span>
 <span id="cb25-5"><a></a>    embedding_table_id<span class="op">=</span><span class="st">"games"</span>,</span>
-<span id="cb25-6"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb25-6"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 <img data-src="images/sphx_glr_06_ken_embeddings_003.png" class="quarto-figure quarto-figure-center r-stretch"><p><a href="https://skrub-data.org/stable/auto_examples/06_ken_embeddings.html">Doc</a></p>
 </section></section>
@@ -3676,17 +3679,17 @@ document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
 <h2>Install skrub</h2>
 <div class="fragment">
 <p>Base installation:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode numberSource shell number-lines code-with-copy"><code class="sourceCode"><span id="cb26-1"><a></a># with pip</span>
+<div class="sourceCode" id="cb26"><pre class="sourceCode numberSource shell number-lines code-with-copy"><code class="sourceCode"><span id="cb26-1"><a></a># with pip</span>
 <span id="cb26-2"><a></a>pip install skrub -U</span>
 <span id="cb26-3"><a></a># with conda</span>
-<span id="cb26-4"><a></a>conda install -c conda-forge skrub</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb26-4"><a></a>conda install -c conda-forge skrub</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="fragment">
 <p>For deep learning features such as <code>TextEncoder</code>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode numberSource shell number-lines code-with-copy"><code class="sourceCode"><span id="cb27-1"><a></a># with pip</span>
+<div class="sourceCode" id="cb27"><pre class="sourceCode numberSource shell number-lines code-with-copy"><code class="sourceCode"><span id="cb27-1"><a></a># with pip</span>
 <span id="cb27-2"><a></a>pip install skrub[transformers] -U</span>
 <span id="cb27-3"><a></a># with conda</span>
-<span id="cb27-4"><a></a>conda install -c conda-forge skrub[transformers]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb27-4"><a></a>conda install -c conda-forge skrub[transformers]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="fragment">
 <p><a href="https://skrub-data.org/stable/install.html" data-preview-link="true">Documentation</a></p>
@@ -3899,7 +3902,7 @@ document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -3926,173 +3929,190 @@ document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
       });
     </script>
     <script id="quarto-html-after-body" type="application/javascript">
-      window.document.addEventListener("DOMContentLoaded", function (event) {
-        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
-        tabsets.forEach(function(tabset) {
-          const tabby = new Tabby('#' + tabset.id);
-        });
-        const isCodeAnnotation = (el) => {
-          for (const clz of el.classList) {
-            if (clz.startsWith('code-annotation-')) {                     
-              return true;
-            }
-          }
-          return false;
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
         }
-        const onCopySuccess = function(e) {
-          // button target
-          const button = e.trigger;
-          // don't keep focus
-          button.blur();
-          // flash "checked"
-          button.classList.add('code-copy-button-checked');
-          var currentTitle = button.getAttribute("title");
-          button.setAttribute("title", "Copied!");
-          let tooltip;
-          if (window.bootstrap) {
-            button.setAttribute("data-bs-toggle", "tooltip");
-            button.setAttribute("data-bs-placement", "left");
-            button.setAttribute("data-bs-title", "Copied!");
-            tooltip = new bootstrap.Tooltip(button, 
-              { trigger: "manual", 
-                customClass: "code-copy-button-tooltip",
-                offset: [0, -8]});
-            tooltip.show();    
-          }
-          setTimeout(function() {
-            if (tooltip) {
-              tooltip.hide();
-              button.removeAttribute("data-bs-title");
-              button.removeAttribute("data-bs-toggle");
-              button.removeAttribute("data-bs-placement");
-            }
-            button.setAttribute("title", currentTitle);
-            button.classList.remove('code-copy-button-checked');
-          }, 1000);
-          // clear code selection
-          e.clearSelection();
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
         }
-        const getTextToCopy = function(trigger) {
-          const outerScaffold = trigger.parentElement.cloneNode(true);
-          const codeEl = outerScaffold.querySelector('code');
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const onCopySuccess = function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
           for (const childEl of codeEl.children) {
             if (isCodeAnnotation(childEl)) {
               childEl.remove();
             }
           }
           return codeEl.innerText;
-        }
-        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-          text: getTextToCopy
-        });
-        clipboard.on('success', onCopySuccess);
-        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-            text: getTextToCopy,
-            container: window.document.getElementById('quarto-embedded-source-code-modal')
-          });
-          clipboardModal.on('success', onCopySuccess);
-        }
-          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-          var mailtoRegex = new RegExp(/^mailto:/);
-            var filterRegex = new RegExp("https:\/\/skrub-data\.org\/skrub-materials\/");
-          var isInternal = (href) => {
-              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-          }
-          // Inspect non-navigation links and adorn them if external
-         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-          for (var i=0; i<links.length; i++) {
-            const link = links[i];
-            if (!isInternal(link.href)) {
-              // undo the damage that might have been done by quarto-nav.js in the case of
-              // links that we want to consider external
-              if (link.dataset.originalHref !== undefined) {
-                link.href = link.dataset.originalHref;
-              }
-            }
-          }
-        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-          const config = {
-            allowHTML: true,
-            maxWidth: 500,
-            delay: 100,
-            arrow: false,
-            appendTo: function(el) {
-                return el.closest('section.slide') || el.parentElement;
-            },
-            interactive: true,
-            interactiveBorder: 10,
-            theme: 'light-border',
-            placement: 'bottom-start',
-          };
-          if (contentFn) {
-            config.content = contentFn;
-          }
-          if (onTriggerFn) {
-            config.onTrigger = onTriggerFn;
-          }
-          if (onUntriggerFn) {
-            config.onUntrigger = onUntriggerFn;
-          }
-            config['offset'] = [0,0];
-            config['maxWidth'] = 700;
-          window.tippy(el, config); 
-        }
-        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-        for (var i=0; i<noterefs.length; i++) {
-          const ref = noterefs[i];
-          tippyHover(ref, function() {
-            // use id or data attribute instead here
-            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-            try { href = new URL(href).hash; } catch {}
-            const id = href.replace(/^#\/?/, "");
-            const note = window.document.getElementById(id);
-            if (note) {
-              return note.innerHTML;
-            } else {
-              return "";
-            }
-          });
-        }
-        const findCites = (el) => {
-          const parentEl = el.parentElement;
-          if (parentEl) {
-            const cites = parentEl.dataset.cites;
-            if (cites) {
-              return {
-                el,
-                cites: cites.split(' ')
-              };
-            } else {
-              return findCites(el.parentElement)
-            }
-          } else {
-            return undefined;
-          }
-        };
-        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-        for (var i=0; i<bibliorefs.length; i++) {
-          const ref = bibliorefs[i];
-          const citeInfo = findCites(ref);
-          if (citeInfo) {
-            tippyHover(citeInfo.el, function() {
-              var popup = window.document.createElement('div');
-              citeInfo.cites.forEach(function(cite) {
-                var citeDiv = window.document.createElement('div');
-                citeDiv.classList.add('hanging-indent');
-                citeDiv.classList.add('csl-entry');
-                var biblioDiv = window.document.getElementById('ref-' + cite);
-                if (biblioDiv) {
-                  citeDiv.innerHTML = biblioDiv.innerHTML;
-                }
-                popup.appendChild(citeDiv);
-              });
-              return popup.innerHTML;
-            });
-          }
-        }
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
       });
-      </script>
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp("https:\/\/skrub-data\.org\/skrub-materials\/");
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
     
 
 </body></html>

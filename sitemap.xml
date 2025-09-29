@@ -1,59 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://skrub-data.org/skrub-materials/pages/slides/skrub-retrieve-merge-predict/skrub-retrieve-merge-predict.html</loc>
-    <lastmod>2025-09-16T14:17:03.935Z</lastmod>
-  </url>
-  <url>
-    <loc>https://skrub-data.org/skrub-materials/pages/slides/talk-edf/slides.html</loc>
-    <lastmod>2025-09-16T14:17:04.059Z</lastmod>
-  </url>
-  <url>
-    <loc>https://skrub-data.org/skrub-materials/pages/slides/soda-kickoff/slides.html</loc>
-    <lastmod>2025-09-16T14:17:04.003Z</lastmod>
-  </url>
-  <url>
-    <loc>https://skrub-data.org/skrub-materials/pages/slides/skrub-intro/skrub-intro.html</loc>
-    <lastmod>2025-09-16T14:17:03.902Z</lastmod>
-  </url>
-  <url>
-    <loc>https://skrub-data.org/skrub-materials/pages/slides/pydata-2025/slides.html</loc>
-    <lastmod>2025-09-16T14:17:03.853Z</lastmod>
-  </url>
-  <url>
     <loc>https://skrub-data.org/skrub-materials/pages/notebooks/categorical-encoders/categorical-encoders.html</loc>
-    <lastmod>2025-09-16T14:17:03.680Z</lastmod>
+    <lastmod>2025-09-29T13:59:59.000Z</lastmod>
   </url>
   <url>
     <loc>https://skrub-data.org/skrub-materials/pages/notebooks/skrub-intro/skrub-intro.html</loc>
-    <lastmod>2025-09-16T14:17:03.689Z</lastmod>
-  </url>
-  <url>
-    <loc>https://skrub-data.org/skrub-materials/index.html</loc>
-    <lastmod>2025-09-16T14:17:03.676Z</lastmod>
-  </url>
-  <url>
-    <loc>https://skrub-data.org/skrub-materials/pages/notebooks/index_notebooks.html</loc>
-    <lastmod>2025-09-16T14:17:03.680Z</lastmod>
-  </url>
-  <url>
-    <loc>https://skrub-data.org/skrub-materials/pages/listings.html</loc>
-    <lastmod>2025-09-16T14:17:03.676Z</lastmod>
-  </url>
-  <url>
-    <loc>https://skrub-data.org/skrub-materials/pages/slides/discover/discover.html</loc>
-    <lastmod>2025-09-16T14:17:03.692Z</lastmod>
+    <lastmod>2025-09-29T13:59:59.009Z</lastmod>
   </url>
   <url>
     <loc>https://skrub-data.org/skrub-materials/pages/slides/index_slides.html</loc>
-    <lastmod>2025-09-16T14:17:03.737Z</lastmod>
+    <lastmod>2025-09-29T13:59:59.056Z</lastmod>
   </url>
   <url>
-    <loc>https://skrub-data.org/skrub-materials/pages/slides/probabl-sprint-july-2025/slides.html</loc>
-    <lastmod>2025-09-16T14:17:03.791Z</lastmod>
+    <loc>https://skrub-data.org/skrub-materials/pages/slides/pydata-2025/slides.html</loc>
+    <lastmod>2025-09-29T13:59:59.174Z</lastmod>
+  </url>
+  <url>
+    <loc>https://skrub-data.org/skrub-materials/pages/slides/skrub-retrieve-merge-predict/skrub-retrieve-merge-predict.html</loc>
+    <lastmod>2025-09-29T13:59:59.257Z</lastmod>
+  </url>
+  <url>
+    <loc>https://skrub-data.org/skrub-materials/pages/slides/soda-kickoff/slides.html</loc>
+    <lastmod>2025-09-29T13:59:59.325Z</lastmod>
+  </url>
+  <url>
+    <loc>https://skrub-data.org/skrub-materials/pages/slides/discover/discover.html</loc>
+    <lastmod>2025-09-29T13:59:59.011Z</lastmod>
+  </url>
+  <url>
+    <loc>https://skrub-data.org/skrub-materials/index.html</loc>
+    <lastmod>2025-09-29T13:59:58.995Z</lastmod>
+  </url>
+  <url>
+    <loc>https://skrub-data.org/skrub-materials/pages/slides/skrub-intro/skrub-intro.html</loc>
+    <lastmod>2025-09-29T13:59:59.224Z</lastmod>
+  </url>
+  <url>
+    <loc>https://skrub-data.org/skrub-materials/pages/slides/talk-edf/slides.html</loc>
+    <lastmod>2025-09-29T13:59:59.382Z</lastmod>
   </url>
   <url>
     <loc>https://skrub-data.org/skrub-materials/pages/slides/expressions/expressions.html</loc>
-    <lastmod>2025-09-16T14:17:03.704Z</lastmod>
+    <lastmod>2025-09-29T13:59:59.024Z</lastmod>
+  </url>
+  <url>
+    <loc>https://skrub-data.org/skrub-materials/pages/slides/probabl-sprint-july-2025/slides.html</loc>
+    <lastmod>2025-09-29T13:59:59.111Z</lastmod>
+  </url>
+  <url>
+    <loc>https://skrub-data.org/skrub-materials/pages/listings.html</loc>
+    <lastmod>2025-09-29T13:59:58.995Z</lastmod>
+  </url>
+  <url>
+    <loc>https://skrub-data.org/skrub-materials/pages/notebooks/index_notebooks.html</loc>
+    <lastmod>2025-09-29T13:59:59.000Z</lastmod>
   </url>
 </urlset>
